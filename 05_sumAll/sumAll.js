@@ -1,5 +1,19 @@
-const sumAll = function() {
-
+const sumAll = function(start,end) {
+    if ( (!Number.isInteger(start)) || (!Number.isInteger(end)) )return "ERROR";
+    if ((start * end) < 1) return "ERROR";
+    
+    
+    if (start > end) {
+        let aux = start;
+        start = end;
+        end = aux;
+    }
+    
+    let sum = 0;
+    for (let i = start; i <= end; i++) {
+        sum += i;
+    }
+    return sum;
 };
 
 // Do not edit below this line
